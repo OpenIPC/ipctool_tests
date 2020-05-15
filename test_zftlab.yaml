@@ -1,0 +1,46 @@
+-
+  hostname: hi3518ev200-ar0130-2.zft
+  connection: ssh
+  output:
+    - "Chip: HiSilicon 3518ev200"
+    - "Sensor: ON Semiconductor AR0130"
+  id: "18ev200+ar0130"
+-
+  hostname: hi3518ev200-sc2235.zft
+  connection: ssh
+  output:
+    - "Chip: HiSilicon 3518ev200"
+    - "Sensor: SmartSens SC2235"
+  id: "18ev200+sc2235"
+-
+  hostname: hi3518ev200-ar0130.zft
+  connection: ssh
+  output:
+    - "Chip: HiSilicon 3518ev200"
+    - "Sensor: ON Semiconductor AR0130"
+  id: "18ev200+ar0130"
+-
+  hostname: hi3518ev200-jxf22.zft
+  connection: ssh
+  output:
+    - "Chip: HiSilicon 3518ev200"
+    - "Sensor: Silicon Optronics JX-F22"
+  id: "18ev200+jxf22"
+-
+  hostname: hi3518ev200-imx222.zft
+  connection: ssh
+  output:
+    - "Chip: HiSilicon 3518ev200"
+    - "Sensor: Sony IMX222"
+  id: "18ev200+imx222"
+  marks: ['xfail']
+-
+  hostname: 172.17.32.51
+  connection: telnet
+  proxy: hi3518ev200-ar0130-2.zft
+  proxy_type: ssh
+  output:
+    - "Chip: HiSilicon 3516cv300"
+    - "Sensor: Sony IMX323"
+  id: "16cv300+imx323"
+  marks: ['xfail']
