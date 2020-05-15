@@ -4,7 +4,7 @@ import pytest
 from subprocess import Popen, PIPE
 import os
 import yaml
-import telnet
+from telnet import Telnet
 
 
 def pytest_generate_tests(metafunc):
@@ -78,15 +78,30 @@ def pytest_generate_tests(metafunc):
 def do_test(test_case):
     host = test_case["hostname"]
     expected = test_case["output"]
+    connection = test_case.get("connection", "ssh")
 
     hash = os.environ["SHA"]
+    binary = "ipc_chip_info-{}".format(hash)
+    durl = "openipc.s3-eu-west-1.amazonaws.com/{}".format(binary)
 
-    run_cmd = "cd /tmp; rm -f ipc_chip_info; wget openipc.s3-eu-west-1.amazonaws.com/ipc_chip_info-{0}; chmod +x ipc_chip_info-{0}; ./ipc_chip_info-{0}; rm ipc_chip_info-{0}".format(
-        hash
-    )
-    with Popen(["ssh", "root@{}".format(host), run_cmd], stdout=PIPE) as proc:
-        output = [i.decode("utf-8") for i in proc.stdout.read().splitlines()]
-        assert output == expected
+    if connection == "telnet":
+        UGET = "/tmp/uget"
+        proxy = test_case.get("proxy")
+        proxy_type = test_case.get("proxy_type", None)
+        t = Telnet(host, debug=False, proxy_type=proxy_type, proxy=proxy)
+        t.login()
+        if not t.file_exists(UGET):
+            t.upload_uget()
+        print(t.run_command(UGET + " run " + durl))
+        t.close()
+
+    elif connection == "ssh":
+        run_cmd = "cd /tmp; rm -f {0}; wget {1}; chmod +x {0}; ./{0}; rm {0}".format(
+            binary, durl
+        )
+        with Popen(["ssh", "root@{}".format(host), run_cmd], stdout=PIPE) as proc:
+            output = [i.decode("utf-8") for i in proc.stdout.read().splitlines()]
+            assert output == expected
 
 
 def test_zftlab(test_case):

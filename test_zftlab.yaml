@@ -37,7 +37,7 @@
 -
   hostname: 172.17.32.51
   connection: telnet
-  proxy: hi3518ev200-ar0130-2.zft
+  proxy: root@hi3518ev200-ar0130-2.zft
   proxy_type: ssh
   output:
     - "Chip: HiSilicon 3516cv300"
