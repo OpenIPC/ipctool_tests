@@ -4,6 +4,7 @@ import pytest
 from subprocess import Popen, PIPE
 import os
 import yaml
+import telnet
 
 
 def pytest_generate_tests(metafunc):
@@ -46,7 +47,7 @@ def pytest_generate_tests(metafunc):
         else:
             return None
 
-    if "expected" not in metafunc.fixturenames:
+    if "test_case" not in metafunc.fixturenames:
         return
 
     dir_path = os.path.dirname(os.path.abspath(metafunc.module.__file__))
@@ -69,19 +70,24 @@ def pytest_generate_tests(metafunc):
         case_id = test_case.get("id", generate_id(test_case["hostname"], level=0))
 
         # Добавляем в наш список сгенерированный из тестовых данных pytest.param
-        test_cases.append(
-            pytest.param(
-                test_case["hostname"], test_case["output"], marks=marks, id=case_id
-            )
-        )
+        test_cases.append(pytest.param(test_case, marks=marks, id=case_id,))
 
-    return metafunc.parametrize("host, expected", test_cases)
+    return metafunc.parametrize("test_case", test_cases)
 
 
-def test_zftlab(host, expected):
+def do_test(test_case):
+    host = test_case["hostname"]
+    expected = test_case["output"]
+
     hash = os.environ["SHA"]
 
-    run_cmd = "cd /tmp; rm -f ipc_chip_info; wget openipc.s3-eu-west-1.amazonaws.com/ipc_chip_info-{0}; chmod +x ipc_chip_info-{0}; ./ipc_chip_info-{0}; rm ipc_chip_info-{0}".format(hash)
+    run_cmd = "cd /tmp; rm -f ipc_chip_info; wget openipc.s3-eu-west-1.amazonaws.com/ipc_chip_info-{0}; chmod +x ipc_chip_info-{0}; ./ipc_chip_info-{0}; rm ipc_chip_info-{0}".format(
+        hash
+    )
     with Popen(["ssh", "root@{}".format(host), run_cmd], stdout=PIPE) as proc:
         output = [i.decode("utf-8") for i in proc.stdout.read().splitlines()]
         assert output == expected
+
+
+def test_zftlab(test_case):
+    do_test(**locals())
