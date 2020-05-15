@@ -1,0 +1,7 @@
+-
+  hostname: 10.216.128.250
+  connection: telnet
+  output:
+    - "Chip: HiSilicon 3516cv300"
+    - "Sensor: Sony IMX291"
+  id: "HI3516CV300+IMX291"

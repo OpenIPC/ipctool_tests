@@ -92,8 +92,9 @@ def do_test(test_case):
         t.login()
         if not t.file_exists(UGET):
             t.upload_uget()
-        print(t.run_command(UGET + " run " + durl))
+        output = t.run_command(UGET + " run " + durl).splitlines()
         t.close()
+        assert output == expected
 
     elif connection == "ssh":
         run_cmd = "cd /tmp; rm -f {0}; wget {1}; chmod +x {0}; ./{0}; rm {0}".format(
@@ -105,4 +106,8 @@ def do_test(test_case):
 
 
 def test_zftlab(test_case):
+    do_test(**locals())
+
+
+def test_dlab(test_case):
     do_test(**locals())
