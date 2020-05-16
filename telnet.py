@@ -5,6 +5,7 @@ import sys
 import time
 import socket
 import subprocess
+import os
 
 username = "root"
 password = "xmhdipc"
@@ -65,7 +66,7 @@ class Telnet:
         print(self.conn.before)
 
     def upload_uget(self):
-        with open("uget.sh") as f:
+        with open(os.path.join(os.path.dirname(os.path.realpath(__file__)), "uget.sh")) as f:
             lines = f.readlines()
             for i in lines:
                 self.conn.send(i)
