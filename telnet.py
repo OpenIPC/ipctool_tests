@@ -33,7 +33,7 @@ class Telnet:
         else:
             self.ssh_proxy = None
 
-        self.conn = pexpect.spawn("telnet " + ipaddr, timeout=2)
+        self.conn = pexpect.spawn("telnet " + ipaddr, timeout=10)
         self.debug = debug
         if debug:
             self.conn.logfile = sys.stdout.buffer
