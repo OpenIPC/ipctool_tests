@@ -18,7 +18,7 @@
   output:
     - "Chip: HiSilicon 3518ev200"
     - "Sensor: ON Semiconductor AR0130"
-  id: "HI3518EV200+AR0130"
+  id: "HI3518EV200+AR0130_2"
 -
   hostname: hi3518ev200-jxf22.zft
   connection: ssh
@@ -43,4 +43,38 @@
     - "Chip: HiSilicon 3516cv300"
     - "Sensor: Sony IMX323"
   id: "HI3516CV300+IMX323"
+-
+# [DEBUG]: ~~~~~~~~~~SC2235_init  JJ ~~~~~~~~~
+  hostname: 172.17.32.52
+  connection: telnet
+  proxy: root@hi3518ev200-ar0130-2.zft
+  proxy_type: ssh
+  output:
+    - "Chip: HiSilicon 3516cv300"
+    - "Sensor: Sony IMX323"
+  id: "HI3516CV300+IMX323"
+  marks: ['xfail']
+-
+# OV9712_Init
+  hostname: 172.17.32.53
+  connection: telnet
+  proxy: root@hi3518ev200-ar0130-2.zft
+  proxy_type: ssh
+  output:
+    - "Chip: HiSilicon 3518?v100"
+    - "Sensor: Sony IMX323"
+  id: "HI3518EV100+"
+  marks: ['xfail']
+-
+# XM530-80X20
+# DEBUG: SC307E!
+# DEBUG: sensor_get_chip:
+# 0x30  0x2  0x1  0x45
+  hostname: 172.17.32.126
+  connection: telnet
+  proxy: root@hi3518ev200-ar0130-2.zft
+  proxy_type: ssh
+  output:
+    - "Chip: Xiongmai XM530"
+  id: "XM530+SC307E"
   marks: ['xfail']
