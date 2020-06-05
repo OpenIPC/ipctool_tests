@@ -62,8 +62,8 @@
   proxy_type: ssh
   output:
     - "Chip: HiSilicon 3518?v100"
-    - "Sensor: Sony IMX323"
-  id: "HI3518EV100+"
+    - "Sensor: OmniVision 9712"
+  id: "HI3518EV100+OV9712"
   marks: ['xfail']
 -
 # XM530-80X20
