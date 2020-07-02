@@ -27,6 +27,7 @@
     - "Sensor: Silicon Optronics JX-F22"
   id: "HI3518EV200+JXF22"
 -
+# SPI
   hostname: hi3518ev200-imx222.zft
   connection: ssh
   output:

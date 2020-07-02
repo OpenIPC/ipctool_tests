@@ -42,10 +42,10 @@
   id: "Hi3516EV200+SC4239"
   marks: ['xfail']
 -
-  hostname: ipg-53h20py-s.dlab
-  connection: ssh
+  hostname: 10.216.128.203
+  connection: telnet
   output:
     - "Chip: HiSilicon 3516cv200"
     - "Sensor: Sony IMX323"
   id: "Hi3516CV200+IMX323"
-  marks: ['xfail']
+# marks: ['xfail']
