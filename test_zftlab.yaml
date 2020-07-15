@@ -27,13 +27,14 @@
     - "Sensor: Silicon Optronics JX-F22"
   id: "HI3518EV200+JXF22"
 -
-# SPI
+# JVT S323H16VF
   hostname: hi3518ev200-imx222.zft
   connection: ssh
   output:
     - "Chip: HiSilicon 3518ev200"
     - "Sensor: Sony IMX222"
   id: "HI3518EV200+IMX222"
+# SPI
   marks: ['xfail']
 -
   hostname: 172.17.32.51
@@ -67,7 +68,7 @@
   id: "HI3518EV100+OV9712"
   marks: ['xfail']
 -
-# XM530-80X20
+# IVG-85X20PS-S
 # DEBUG: SC307E!
 # DEBUG: sensor_get_chip:
 # 0x30  0x2  0x1  0x45
@@ -77,5 +78,7 @@
   proxy_type: ssh
   output:
     - "Chip: Xiongmai XM530"
+    - "Sensor: SmartSens SC2315E"
   id: "XM530+SC307E"
+# need Sofia to check ID detection procedure
   marks: ['xfail']
