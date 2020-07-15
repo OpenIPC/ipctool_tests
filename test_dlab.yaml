@@ -20,13 +20,6 @@
     - "Sensor: SmartSens SC2235P"
   id: "HI3516CV300+SC2235P"
 -
-  hostname: ipg-53x13pa-s.dlab
-  connection: telnet
-  output:
-    - "Chip: Xiongmai XM510"
-    - "Sensor: ON Semiconductor AR0130"
-  id: "XM510+AR0130"
--
   hostname: ivg-85hf20pya-s.dlab
   connection: telnet
   output:
@@ -42,10 +35,9 @@
   id: "Hi3516EV200+SC4239"
   marks: ['xfail']
 -
-  hostname: 10.216.128.203
+  hostname: ipg-53h20py-s.dlab
   connection: telnet
   output:
     - "Chip: HiSilicon 3516cv200"
     - "Sensor: Sony IMX323"
   id: "Hi3516CV200+IMX323"
-# marks: ['xfail']
