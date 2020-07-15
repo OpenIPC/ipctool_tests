@@ -71,7 +71,7 @@
 # DEBUG: SC307E!
 # DEBUG: sensor_get_chip:
 # 0x30  0x2  0x1  0x45
-  hostname: 172.17.32.126
+  hostname: 172.17.32.133
   connection: telnet
   proxy: root@hi3518ev200-ar0130-2.zft
   proxy_type: ssh
