@@ -1,0 +1,35 @@
+-
+  hostname: IPG-53X13PA-S.dlab
+  connection: telnet
+  output:
+    - "Chip: Xiongmai XM510"
+    - "Sensor: ON Semiconductor AR0130"
+  id: "IPG-53X13PA-S, XM510+AR0130"
+-
+  hostname: IPG-50X10PT-S.dlab
+  connection: telnet
+  output:
+    - "Chip: Xiongmai XM510"
+    - "Sensor: Silicon Optronics JX-H62"
+  id: "IPG-50X10PT-S, XM510+H62"
+-
+  hostname: IPG-53X13PT-S.dlab
+  connection: telnet
+  output:
+    - "Chip: Xiongmai XM510"
+    - "Sensor: Silicon Optronics JX-H65"
+  id: "IPG-53X13PT-S, XM510+H65"
+-
+  hostname: IVG-85X50PYA-S.dlab
+  connection: telnet
+  output:
+    - "Chip: Xiongmai XM530"
+    - "Sensor: Sony IMX335"
+  id: "IVG-85X50PYA-S, XM530+IMX335"
+-
+  hostname: IVG-83X50PS-S.dlab
+  connection: telnet
+  output:
+    - "Chip: Xiongmai XM530"
+    - "Sensor: SmartSens SC5300"
+  id: "IVG-83X50PS-S, XM530+SC5300"

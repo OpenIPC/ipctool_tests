@@ -111,3 +111,7 @@ def test_zftlab(test_case):
 
 def test_dlab(test_case):
     do_test(**locals())
+
+
+def test_sw(test_case):
+    do_test(**locals())
