@@ -96,3 +96,12 @@
     - "Chip: HiSilicon 3518ev200"
     - "Sensor: SmartSens SC2135"
   id: "IPG-50HV20PES-S, Hi3516EV200+SC2135"
+-
+  hostname: 172.17.32.132
+  connection: telnet
+  proxy: root@hi3518ev200-ar0130-2.zft
+  proxy_type: ssh
+  output:
+    - "Chip: HiSilicon 3518ev200"
+    - "Sensor: SmartSens SC2045"
+  id: "50HV20PSA-S, Hi3516EV200+SC2045"
