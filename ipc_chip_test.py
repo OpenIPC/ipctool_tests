@@ -5,6 +5,7 @@ from subprocess import Popen, PIPE
 import os
 import yaml
 from telnet import Telnet
+import tasmota
 
 
 def pytest_generate_tests(metafunc):
@@ -113,5 +114,13 @@ def test_dlab(test_case):
     do_test(**locals())
 
 
-def test_sw(test_case):
-    do_test(**locals())
+@pytest.fixture(scope='session')
+def tasmota_50803B():
+    print()
+    with tasmota.updown("tasmota_50803B.dlab", "10.216.128.5", warmup=250) as resource:
+        yield
+        print()
+
+
+def test_sw(test_case, tasmota_50803B):
+    do_test(test_case)
