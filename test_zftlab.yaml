@@ -38,7 +38,7 @@
 -
   hostname: 172.17.32.51
   connection: telnet
-  proxy: root@hi3518ev200-ar0130-2.zft
+  proxy: root@caramel.zft
   proxy_type: ssh
   output:
     - "Chip: HiSilicon 3516cv300"
@@ -48,7 +48,7 @@
 # [DEBUG]: ~~~~~~~~~~SC2235_init  JJ ~~~~~~~~~
   hostname: 172.17.32.52
   connection: telnet
-  proxy: root@hi3518ev200-ar0130-2.zft
+  proxy: root@caramel.zft
   proxy_type: ssh
   output:
     - "Chip: HiSilicon 3516cv300"
@@ -59,7 +59,7 @@
 # OV9712_Init
   hostname: 172.17.32.53
   connection: telnet
-  proxy: root@hi3518ev200-ar0130-2.zft
+  proxy: root@caramel.zft
   proxy_type: ssh
   output:
     - "Chip: HiSilicon 3518?v100"
@@ -72,7 +72,7 @@
 # 0x30  0x2  0x1  0x45
   hostname: 172.17.32.133
   connection: telnet
-  proxy: root@hi3518ev200-ar0130-2.zft
+  proxy: root@caramel.zft
   proxy_type: ssh
   output:
     - "Chip: Xiongmai XM530"
@@ -90,7 +90,7 @@
 -
   hostname: 172.17.32.135
   connection: telnet
-  proxy: root@hi3518ev200-ar0130-2.zft
+  proxy: root@caramel.zft
   proxy_type: ssh
   output:
     - "Chip: HiSilicon 3518ev200"
@@ -99,7 +99,7 @@
 -
   hostname: 172.17.32.132
   connection: telnet
-  proxy: root@hi3518ev200-ar0130-2.zft
+  proxy: root@caramel.zft
   proxy_type: ssh
   output:
     - "Chip: HiSilicon 3518ev200"
