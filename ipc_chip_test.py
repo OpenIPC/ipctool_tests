@@ -98,7 +98,7 @@ def do_test(test_case):
         assert output == expected
 
     elif connection == "ssh":
-        run_cmd = "cd /tmp; rm -f {0}; wget -q {1}; chmod +x {0}; ./{0}; rm {0}".format(
+        run_cmd = "cd /tmp; rm -f {0}; wget -q http://{1}; chmod +x {0}; ./{0}; rm {0}".format(
             binary, durl
         )
         with Popen(["ssh", "root@{}".format(host), run_cmd], stdout=PIPE) as proc:

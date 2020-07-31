@@ -36,7 +36,7 @@
   marks: ['xfail']
 -
   hostname: ipg-53h20py-s.dlab
-  connection: telnet
+  connection: ssh
   output:
     - "Chip: HiSilicon 3516cv200"
     - "Sensor: Sony IMX323"

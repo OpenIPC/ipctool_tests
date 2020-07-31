@@ -24,7 +24,7 @@
   connection: ssh
   output:
     - "Chip: HiSilicon 3518ev200"
-    - "Sensor: Silicon Optronics JX-F22"
+    - "Sensor: Silicon Optronics JXF22"
   id: "HI3518EV200+JXF22"
 -
   hostname: hi3518ev200-imx222.zft
@@ -62,7 +62,7 @@
   proxy: root@caramel.zft
   proxy_type: ssh
   output:
-    - "Chip: HiSilicon 3518?v100"
+    - "Chip: HiSilicon 3518ev100"
     - "Sensor: OmniVision 9712"
   id: "HI3518EV100+OV9712"
   marks: ['xfail']
@@ -85,7 +85,7 @@
   connection: ssh
   output:
     - "Chip: HiSilicon 3518ev200"
-    - "Sensor: Silicon Optronics JX-F23"
+    - "Sensor: Silicon Optronics JXF23"
   id: "RS-H726-A0, Hi3516EV200+JXF23"
 -
   hostname: 172.17.32.135
