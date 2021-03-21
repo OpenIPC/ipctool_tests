@@ -43,4 +43,3 @@
     - "Chip: HiSilicon 3516cv300"
     - "Sensor: Sony IMX323"
   id: "HI3516CV300+IMX323"
-  marks: ['xfail']

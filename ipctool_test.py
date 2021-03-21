@@ -81,7 +81,7 @@ def do_test(test_case):
     connection = test_case.get("connection", "ssh")
 
     hash = os.environ["SHA"]
-    binary = "ipc_chip_info-{}".format(hash)
+    binary = "ipctool-{}".format(hash)
     durl = "openipc.s3-eu-west-1.amazonaws.com/{}".format(binary)
 
     if connection == "telnet":
