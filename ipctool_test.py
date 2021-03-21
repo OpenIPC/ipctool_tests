@@ -5,6 +5,7 @@ from subprocess import Popen, PIPE
 import os
 import yaml
 from telnet import Telnet
+import tasmota
 
 
 def pytest_generate_tests(metafunc):
@@ -97,7 +98,7 @@ def do_test(test_case):
         assert output == expected
 
     elif connection == "ssh":
-        run_cmd = "cd /tmp; rm -f {0}; wget {1}; chmod +x {0}; ./{0}; rm {0}".format(
+        run_cmd = "cd /tmp; rm -f {0}; wget -q http://{1}; chmod +x {0}; ./{0}; rm {0}".format(
             binary, durl
         )
         with Popen(["ssh", "root@{}".format(host), run_cmd], stdout=PIPE) as proc:
@@ -111,3 +112,15 @@ def test_zftlab(test_case):
 
 def test_dlab(test_case):
     do_test(**locals())
+
+
+@pytest.fixture(scope='session')
+def tasmota_50803B():
+    print()
+    with tasmota.updown("tasmota_50803B.dlab", "10.216.128.5", warmup=250) as resource:
+        yield
+        print()
+
+
+def test_sw(test_case, tasmota_50803B):
+    do_test(test_case)

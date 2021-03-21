@@ -1,7 +1,43 @@
 -
-  hostname: 10.216.128.250
+  hostname: ivg-hp203y-ae.dlab
   connection: telnet
   output:
     - "Chip: HiSilicon 3516cv300"
     - "Sensor: Sony IMX291"
   id: "HI3516CV300+IMX291"
+-
+  hostname: ivg-85hg50pya-s.dlab
+  connection: telnet
+  output:
+    - "Chip: HiSilicon 3516ev300"
+    - "Sensor: Sony IMX335"
+  id: "HI3516EV300+IMX335"
+-
+  hostname: ipg-80h20ps-s.dlab
+  connection: telnet
+  output:
+    - "Chip: HiSilicon 3516cv300"
+    - "Sensor: SmartSens SC2235P"
+  id: "HI3516CV300+SC2235P"
+-
+  hostname: ivg-85hf20pya-s.dlab
+  connection: telnet
+  output:
+    - "Chip: HiSilicon 3516ev200"
+    - "Sensor: Sony IMX307"
+  id: "HI3516EV200+IMX307"
+-
+  hostname: ivg-85hf30ps-s.dlab
+  connection: telnet
+  output:
+    - "Chip: HiSilicon 3516ev200"
+    - "Sensor: SmartSens SC4239"
+  id: "Hi3516EV200+SC4239"
+  marks: ['xfail']
+-
+  hostname: ipg-53h20py-s.dlab
+  connection: ssh
+  output:
+    - "Chip: HiSilicon 3516cv200"
+    - "Sensor: Sony IMX323"
+  id: "Hi3516CV200+IMX323"

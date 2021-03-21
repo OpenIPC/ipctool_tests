@@ -18,13 +18,13 @@
   output:
     - "Chip: HiSilicon 3518ev200"
     - "Sensor: ON Semiconductor AR0130"
-  id: "HI3518EV200+AR0130"
+  id: "HI3518EV200+AR0130_2"
 -
   hostname: hi3518ev200-jxf22.zft
   connection: ssh
   output:
     - "Chip: HiSilicon 3518ev200"
-    - "Sensor: Silicon Optronics JX-F22"
+    - "Sensor: Silicon Optronics JXF22"
   id: "HI3518EV200+JXF22"
 -
   hostname: hi3518ev200-imx222.zft
@@ -32,14 +32,76 @@
   output:
     - "Chip: HiSilicon 3518ev200"
     - "Sensor: Sony IMX222"
-  id: "HI3518EV200+IMX222"
+  id: "JVT-S323H16VF, HI3518EV200+IMX222"
+# SPI
   marks: ['xfail']
 -
   hostname: 172.17.32.51
   connection: telnet
-  proxy: root@hi3518ev200-ar0130-2.zft
+  proxy: root@caramel.zft
   proxy_type: ssh
   output:
     - "Chip: HiSilicon 3516cv300"
     - "Sensor: Sony IMX323"
   id: "HI3516CV300+IMX323"
+-
+# [DEBUG]: ~~~~~~~~~~SC2235_init  JJ ~~~~~~~~~
+  hostname: 172.17.32.52
+  connection: telnet
+  proxy: root@caramel.zft
+  proxy_type: ssh
+  output:
+    - "Chip: HiSilicon 3516cv300"
+    - "Sensor: Sony IMX323"
+  id: "HI3516CV300+IMX323"
+  marks: ['xfail']
+-
+# OV9712_Init
+  hostname: 172.17.32.53
+  connection: telnet
+  proxy: root@caramel.zft
+  proxy_type: ssh
+  output:
+    - "Chip: HiSilicon 3518ev100"
+    - "Sensor: OmniVision 9712"
+  id: "HI3518EV100+OV9712"
+  marks: ['xfail']
+-
+# DEBUG: SC307E!
+# DEBUG: sensor_get_chip:
+# 0x30  0x2  0x1  0x45
+  hostname: 172.17.32.133
+  connection: telnet
+  proxy: root@caramel.zft
+  proxy_type: ssh
+  output:
+    - "Chip: Xiongmai XM530"
+    - "Sensor: SmartSens SC2315E"
+  id: "IVG-85X20PS-S, XM530+SC307E"
+# need Sofia to check ID detection procedure
+  marks: ['xfail']
+-
+  hostname: RS-H726-A0.zft
+  connection: ssh
+  output:
+    - "Chip: HiSilicon 3518ev200"
+    - "Sensor: Silicon Optronics JXF23"
+  id: "RS-H726-A0, Hi3516EV200+JXF23"
+-
+  hostname: 172.17.32.135
+  connection: telnet
+  proxy: root@caramel.zft
+  proxy_type: ssh
+  output:
+    - "Chip: HiSilicon 3518ev200"
+    - "Sensor: SmartSens SC2135"
+  id: "IPG-50HV20PES-S, Hi3516EV200+SC2135"
+-
+  hostname: 172.17.32.132
+  connection: telnet
+  proxy: root@caramel.zft
+  proxy_type: ssh
+  output:
+    - "Chip: HiSilicon 3518ev200"
+    - "Sensor: SmartSens SC2045"
+  id: "50HV20PSA-S, Hi3516EV200+SC2045"

@@ -5,6 +5,7 @@ import sys
 import time
 import socket
 import subprocess
+import os
 
 username = "root"
 password = "xmhdipc"
@@ -32,7 +33,7 @@ class Telnet:
         else:
             self.ssh_proxy = None
 
-        self.conn = pexpect.spawn("telnet " + ipaddr, timeout=2)
+        self.conn = pexpect.spawn("telnet " + ipaddr, timeout=10)
         self.debug = debug
         if debug:
             self.conn.logfile = sys.stdout.buffer
@@ -65,7 +66,7 @@ class Telnet:
         print(self.conn.before)
 
     def upload_uget(self):
-        with open("uget.sh") as f:
+        with open(os.path.join(os.path.dirname(os.path.realpath(__file__)), "uget.sh")) as f:
             lines = f.readlines()
             for i in lines:
                 self.conn.send(i)
